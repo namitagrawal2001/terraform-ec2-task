@@ -33,3 +33,8 @@ output "ec2_private_ip" {
     for key in aws_instance.my_instance : key.private_ip
   ]
 }
+output "ec2_instance_ids" {
+  value = [ 
+    for key in aws_instance.my_instance : key.id
+  ]
+}
